@@ -1,64 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:se330_project1/home.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {  
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Just Clicked Demo',
-      theme: ThemeData( 
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: '*JustClicked* Demo Home Page'),
-    );
-  }
+void main(){
+  runApp(JustClickedCamerasApp());
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key); 
+class JustClickedCamerasApp extends StatelessWidget{
+  // @override 
+  // Widget build(BuildContext context){
+  //   return MaterialApp(home: Text('hiya'));
+  // }
 
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() { 
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above. 
-    return Scaffold(
+  Widget build(BuildContext context) {     
+   double screenWidth = MediaQuery.of(context).size.width;
+   double screenHeight = MediaQuery.of(context).size.height;
+   return Scaffold(
       appBar: AppBar( 
-        title: Text(widget.title),
+        title: Text('Just Clicked Cameras', style: TextStyle(fontSize: screenWidth*0.10)),
+        backgroundColor: Color.fromRGBO(153, 23, 0, 1),
       ),
       body: Center( 
-        child: Column( 
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have purchased our cameras this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              'tempString',
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Buy More!',
-        child: Icon(Icons.add),
       ),
     );
   }
