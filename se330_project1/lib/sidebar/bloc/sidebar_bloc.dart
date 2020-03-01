@@ -14,13 +14,12 @@ class SidebarBloc extends Bloc<SidebarEvent, SidebarState> {
   Stream<SidebarState> mapEventToState(
     SidebarEvent event,
   ) async* {
-    if (event is ToggleSidebar) {
-      print('InsideToggle');
+    if (event is ToggleSidebar) { 
       if (state is SidebarDisplayed) {
-      print('Inside Displayed now Hidden');
+      print('Was Displayed now Hidden');
         yield SidebarHidden();
       } else if (state is SidebarHidden) {
-      print('Inside Hidden now Displayed');
+      print('Was Hidden now Displayed');
         yield SidebarDisplayed();
       } else if (state is SidebarInitial) {
         print('Inside Initial Click');

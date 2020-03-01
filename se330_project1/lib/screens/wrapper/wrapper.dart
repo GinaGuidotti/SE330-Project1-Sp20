@@ -13,7 +13,7 @@ class Wrapper extends StatelessWidget {
     final screenWidth = MediaQuery.of(wrapperContext).size.width; 
      final HeaderBloc headerBloc = BlocProvider.of<HeaderBloc>(wrapperContext);
      final SidebarBloc sidebarBloc = BlocProvider.of<SidebarBloc>(wrapperContext); 
-    final RouteGenerator bodyGenerator = RouteGenerator();
+    final RouteGenerator bodyGenerator = RouteGenerator(headerBloc: headerBloc);
     return BlocBuilder<HeaderBloc, HeaderState>(
               builder: (context, headerState) {
                 return Scaffold(
@@ -27,7 +27,7 @@ class Wrapper extends StatelessWidget {
                     leading: IconButton(
                       icon: Icon(Icons.menu),
                       onPressed: () {
-                        print('Clicked the Sidebar');
+                        print('\nClicked the Sidebar');
                         sidebarBloc.add(ToggleSidebar());
                       }
                     )
@@ -45,21 +45,6 @@ class Wrapper extends StatelessWidget {
                 );    
         }     
     );
-    }
-    }
-
-  enum ThemeEvent { toggle }
-
-class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
-  @override
-  ThemeData get initialState => ThemeData.light();
-
-  @override
-  Stream<ThemeData> mapEventToState(ThemeEvent event) async* {
-    switch (event) {
-      case ThemeEvent.toggle:
-        yield state == ThemeData.dark() ? ThemeData.light() : ThemeData.dark();
-        break;
-    }
   }
 }
+ 

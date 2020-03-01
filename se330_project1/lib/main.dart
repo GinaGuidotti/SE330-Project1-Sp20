@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:se330_project1/screens/home.dart';
+import 'package:flutter/material.dart'; 
 import 'package:se330_project1/globalvariables.dart'; 
 import 'package:se330_project1/screens/wrapper/bloc/header_bloc.dart';
 import 'package:se330_project1/sidebar/bloc/sidebar_bloc.dart'; 
@@ -37,11 +36,22 @@ Widget JustClickedCamerasApp( ){
   
 }
 
+class SetUpHttp extends StatefulWidget{
+final String title = 'Set Up Http';
+@override
+_MyHttpSetup createState() => _MyHttpSetup();
+}
 
-Widget build(BuildContext context) {     
-  //  double screenWidth = MediaQuery.of(context).size.width;
-  //  double screenHeight = MediaQuery.of(context).size.height;
-  return Scaffold( 
+class _MyHttpSetup extends State<SetUpHttp>{
+var realString = "";
+ 
+@override
+void initState(){ 
+
+}
+
+Widget build(BuildContext context) {      
+  return Scaffold(
       appBar: AppBar( 
         title: Text('Just Clicked Cameras', style: TextStyle(fontSize: 20)),
         backgroundColor: DarkCyan,
@@ -51,10 +61,12 @@ Widget build(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'tempString',
+              realString,
             ),
           ],
         ),
-      ), 
+      ),
     );
   }
+
+}

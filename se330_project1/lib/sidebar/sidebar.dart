@@ -5,7 +5,7 @@ import 'package:se330_project1/screens/wrapper/wrapper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-class Sidebar extends StatefulWidget {
+class Sidebar extends StatefulWidget {   
   final screenWidth;
   Sidebar({this.screenWidth});
   final sidebarTopItems = [
@@ -40,11 +40,14 @@ class Sidebar extends StatefulWidget {
 
 
   @override
-  _SidebarState createState() => _SidebarState();
+  _SidebarState createState(){
+      print('Inside Sidebar.dart create State before ');
+     _SidebarState();
+      print('Inside Sidebar.dart create State after ');
+  }
 }
 
-class _SidebarState 
-  extends State<Sidebar> with SingleTickerProviderStateMixin{
+class _SidebarState extends State<Sidebar> with SingleTickerProviderStateMixin{
   double minWidth = -5.0;
   double maxWidth;
   AnimationController _animationController;
@@ -61,12 +64,12 @@ class _SidebarState
   }
 
   Widget getWidget(context, widget) {
+    print('Inside getWidget');
     final screenHeight = MediaQuery.of(context).size.height;
     SidebarBloc sidebarBloc = BlocProvider.of<SidebarBloc>(context);
     return BlocListener<SidebarBloc, SidebarState>(
       listener: (context, state) {
-        if (state is SidebarDisplayed) {
-          print('Inside Sidebar.dart line 67');
+        if (state is SidebarDisplayed) { 
           _animationController.forward();
         } else if (state is SidebarHidden) {
           _animationController.reverse();
@@ -115,6 +118,7 @@ class _SidebarState
   }
 
   Widget build(BuildContext context) {
+    print('build in Sidebar state');
     return AnimatedBuilder(
       animation: _animationController,
       builder: (_, __) => getWidget(context, widget)
@@ -123,6 +127,7 @@ class _SidebarState
 
   Widget buildSidebarItems(BuildContext context, List sidebarItems) {
     SidebarBloc sidebarBloc = BlocProvider.of<SidebarBloc>(context); 
+    print('BuildingSideBarItems');
     double screenHeight = MediaQuery.of(context).size.height;
     List<Widget> itemList = <Widget>[];
     sidebarItems.forEach((item) {
