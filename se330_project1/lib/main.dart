@@ -1,65 +1,43 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
+import 'package:se330_project1/globalvariables.dart';  
+import 'package:flutter_bloc/flutter_bloc.dart';  
+import 'dart:convert'; 
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
-void main() => runApp(MyApp());
+void main(){ 
+  runApp(
+    MyApp( )
+  );
+}
 
-class MyApp extends StatelessWidget {  
+class MyApp extends StatelessWidget{
+
   @override
-  Widget build(BuildContext context) {
+  Widget build( BuildContext context){     
     return MaterialApp(
-      title: 'Just Clicked Demo', 
-      theme: ThemeData( 
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'JustClicked Demo Home Page'),
-    );
+      debugShowCheckedModeBanner: false,
+      title: 'Just Clicked Cameras Main UI',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            primaryColor: DarkCyan, 
+          ),
+      home: MyMainPage(),
+      );    
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key); 
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() { 
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above. 
+class MyMainPage extends StatelessWidget{
+  @override 
+  Widget build(BuildContext context){
+   double screenWidth = MediaQuery.of(context).size.width;
+   TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
     return Scaffold(
-      appBar: AppBar( 
-        title: Text(widget.title),
+      appBar: AppBar(
+        title: Text('Just Clicked Cameras'),
       ),
-      body: Center( 
-        child: Column( 
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have purchased our cameras this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Buy More!',
-        child: Icon(Icons.add),
-      ),
+      drawer: CollapsingNavigationDrawer(),
+      body: Text('Future Login? or click to enter as guest', style: style),
+
     );
   }
 }
