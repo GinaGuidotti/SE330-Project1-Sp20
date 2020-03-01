@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flutter/material.dart';
 
 //Global Colors
 const DarkBlue = Color.fromRGBO(0, 0, 139, 1);
@@ -13,3 +14,6 @@ const Navy = Color.fromRGBO(0, 0, 128, 1);
 
 //More Colors Here: 
 //https://www.rapidtables.com/web/color/html-color-codes.html
+
+TextStyle listTitleDefaultTextStyle = TextStyle(color: Colors.white70, fontSize: 20.0, fontWeight: FontWeight.w600);
+TextStyle listTitleSelectedTextStyle = TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w600);

@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
-class HomePage extends StatefulWidget { 
+class Saved extends StatefulWidget { 
   @override
-  createState() => _HomePageState();
+  createState() => _SavedPageState();
 }
 
-class _HomePageState extends State<HomePage>{ 
+class _SavedPageState extends State<Saved>{ 
 
   Widget build(BuildContext context) {    
    double screenWidth = MediaQuery.of(context).size.width;
   //  double screenHeight = MediaQuery.of(context).size.height; 
    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
-   return new Scaffold(  
+   return new Scaffold( 
         appBar: AppBar(
-          title: Text('Home Page'),
+          title: Text('Saved'),
         ),
         drawer: CollapsingNavigationDrawer(),
         body: new Center(
@@ -29,30 +29,11 @@ class _HomePageState extends State<HomePage>{
                 style: new TextStyle(
                   fontSize: (screenWidth * 0.07), 
                 ),
-              ),
-              SizedBox(height: screenWidth * 0.1),
-              ListTile(
-                title: Text('About Us', style: italicTitle),
-                subtitle: Text((
-                  'its me'),
-                  style: style),
-              ),
+              ),             
               SizedBox(height: screenWidth * 0.02),
               ListTile(
-                title: Text('Our Company:', style: italicTitle,),
-                subtitle: Text('full potential.',
-                  style: style),
-              ),
-              SizedBox(height: screenWidth * 0.02),
-              ListTile(
-                title: Text('Special Note', style: italicTitle,),
-                subtitle: Text( 'hiya .',
-                  style: style),
-              ),              
-              SizedBox(height: screenWidth * 0.02),
-              ListTile(
-                title: Text('Contact Us At:', style: italicTitle,),
-                subtitle: Text('Call (605)697-6624 ',
+                title: Text('Current Page:', style: italicTitle,),
+                subtitle: Text('THIS IS saved ',
                   style: style),
               ),
 

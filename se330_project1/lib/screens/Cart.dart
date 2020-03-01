@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';   
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
-class AboutUs extends StatefulWidget { 
+class Cart extends StatefulWidget { 
   @override
-  createState() => _AboutUsPageState();
+  createState() => _CartPageState();
 }
 
-class _AboutUsPageState extends State<AboutUs>{ 
+class _CartPageState extends State<Cart>{ 
   @override
   Widget build(BuildContext context) {    
    double screenWidth = MediaQuery.of(context).size.width;
@@ -31,9 +31,9 @@ class _AboutUsPageState extends State<AboutUs>{
               ),
               SizedBox(height: screenWidth * 0.1),
               ListTile(
-                title: Text('Philosophy', style: italicTitle),
+                title: Text('This is future', style: italicTitle),
                 subtitle: Text((
-                  'Test1'),
+                  'CART'),
                   style: style),
               ),
               SizedBox(height: screenWidth * 0.02), 
