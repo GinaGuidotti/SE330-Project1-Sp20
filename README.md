@@ -1,4 +1,7 @@
-# se330_project1
+# SE330-Project1-Sp20
+Spring 2020 - SE 330 at SDSU - Project 1 Repository
+
+# README inside se330_project1
 
 A Flutter Project for South Dakota State University - Spring 2020 - SE330 Human Factors and User Interface
 Group: Gina Guidotti, Michael Weible, Shane Hill
@@ -16,5 +19,4 @@ Group: Gina Guidotti, Michael Weible, Shane Hill
   - Require the customer choose one of many base variations (min 2-*)
   - Require the customer to choose zero or more optional accessories
   - Require the customer to enter a desired quantity of identically configured products
-  - Require the customer to confirm the selected configuration, quantity and price 
-  
+  - Require the customer to confirm the selected configuration, quantity and price
