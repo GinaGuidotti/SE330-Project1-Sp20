@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';  
 import 'package:se330_project1/globalvariables.dart';
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 class HomePage extends StatefulWidget { 
   @override
@@ -13,7 +14,11 @@ class _HomePageState extends State<HomePage>{
   //  double screenHeight = MediaQuery.of(context).size.height; 
    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
-   return new Scaffold( 
+   return new Scaffold(  
+        appBar: AppBar(
+          title: Text('Home Page'),
+        ),
+        drawer: CollapsingNavigationDrawer(),
         body: new Center(
           child: new ListView( 
             children: <Widget>[ 

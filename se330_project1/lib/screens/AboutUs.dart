@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';   
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 class AboutUs extends StatefulWidget { 
   @override
@@ -13,10 +14,13 @@ class _AboutUsPageState extends State<AboutUs>{
    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
    return new Scaffold( 
+        appBar: AppBar(
+          title: Text('About Us'),
+        ),
+        drawer: CollapsingNavigationDrawer(),
         body: new Center(
           child: new ListView( 
-            children: <Widget>[
-                
+            children: <Widget>[                
               SizedBox(height: screenWidth * 0.03),
               Text(
                 'Just Clicked Cameras',

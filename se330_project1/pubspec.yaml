@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter 
   flutter_bloc: ^3.1.0 
   equatable: ^1.0.0  
-  intl: ^0.16.1   #was originally 0.16.1
+  intl: ^0.16.1   
   flutter_secure_storage: ^3.3.1+1  
   http: ^0.12.0+4   
   flutter_tagging: ^1.1.0 

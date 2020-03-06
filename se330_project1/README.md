@@ -16,4 +16,5 @@ Group: Gina Guidotti, Michael Weible, Shane Hill
   - Require the customer choose one of many base variations (min 2-*)
   - Require the customer to choose zero or more optional accessories
   - Require the customer to enter a desired quantity of identically configured products
-  - Require the customer to confirm the selected configuration, quantity and price
+  - Require the customer to confirm the selected configuration, quantity and price 
+  
