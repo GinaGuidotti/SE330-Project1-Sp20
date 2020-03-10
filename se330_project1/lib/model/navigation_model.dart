@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NavigationModel {
   String title;
   IconData icon;
-  String path;
+  String path;  //Not being used currently
 
   NavigationModel({this.title, this.icon, this.path});
 }
