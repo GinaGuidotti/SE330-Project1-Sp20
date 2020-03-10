@@ -14,5 +14,5 @@ List<NavigationModel> navigationItems = [
   NavigationModel(title: "Favorites", icon: Icons.favorite, path: 'Favorites'),
   NavigationModel(title: "Saved", icon: Icons.save_alt, path: 'Saved'),
   NavigationModel(title: "Cart", icon: Icons.shopping_cart, path: 'Cart'),
-  NavigationModel(title: "About Us", icon: Icons.help, path: 'AboutUs'),
+  NavigationModel(title: "Contact Us", icon: Icons.help, path: 'ContactUs'),
 ];

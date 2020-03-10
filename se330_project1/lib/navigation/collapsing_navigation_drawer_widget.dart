@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:se330_project1/screens/Saved.dart';
 import 'package:se330_project1/screens/Shopping.dart';
 import 'package:se330_project1/screens/Favorites.dart'; 
-import 'package:se330_project1/screens/AboutUs.dart';
+import 'package:se330_project1/screens/ContactUs.dart';
 import 'package:se330_project1/screens/home.dart';
 import 'package:se330_project1/screens/Cart.dart';
 
@@ -98,10 +98,10 @@ class CollapsingNavigationDrawerState extends State<CollapsingNavigationDrawer>
                             MaterialPageRoute(builder: (context) => Cart()),
                          );
                         }else if(counter == 5 ){ //AboutUs Page
-                          print('About Page');
+                          print('Contact Us Page');
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => AboutUs()),
+                            MaterialPageRoute(builder: (context) => ContactUs()),
                          );
                         }else{
                           print('Error Page');
