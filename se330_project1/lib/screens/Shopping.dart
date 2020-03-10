@@ -45,3 +45,17 @@ class _ShoppingPageState extends State<Shopping>{
   }
 
 }
+
+// void main() {
+//   runApp(new MaterialApp(
+//     title: 'Demo App',
+//     home: new CameraList(cameras:
+//       [
+//         new CameraDatabase("Canon", "EOS 2000D", 299.99),
+//         new CameraDatabase("Canon", "EOS C200 EF CINEMA", 6499.00 ),
+//         new CameraDatabase("Nikon", "D5 DSLR", 4429.00),
+//         new CameraDatabase("Nikon",  "D3500 DSLR", 388.00),
+        
+//       ],),
+//   ));
+// }
