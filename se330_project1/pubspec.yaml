@@ -44,4 +44,8 @@ flutter:
           weight: 200
         - asset: fonts/SF-Pro-Display-Heavy.otf
           weight: 800
-
+  assets: 
+    - assets/CanonRebelT7.gif
+    - assets/CanonC200EF.jpg 
+    - assets/NikonD5.jpg 
+    - assets/NikonD3500.jpg
