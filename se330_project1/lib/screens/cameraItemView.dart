@@ -55,6 +55,7 @@ class CameraItem extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold( 
+        backgroundColor: DarkCyan,
         // This does not look nice at all and it makes me sad. Otherwise it works perfectly fine
         // it just does not blend well with the current app bar thats already there... this is a future fix
         // appBar: PreferredSize(

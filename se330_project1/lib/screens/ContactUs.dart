@@ -82,6 +82,7 @@ class _ContactUsPageState extends State<ContactUs>{
 
    return new Scaffold( 
         appBar: AppBar(
+          backgroundColor: DarkCyan,
           title: Text('Contact Us'),
         ),
         drawer: CollapsingNavigationDrawer(),

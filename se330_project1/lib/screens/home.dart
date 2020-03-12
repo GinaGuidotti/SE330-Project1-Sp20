@@ -17,9 +17,10 @@ class _HomePageState extends State<HomePage>{
    TextStyle blueLargeStyle = TextStyle(fontSize: screenWidth*0.07, color: DarkCyan, fontWeight: FontWeight.bold); 
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
    TextStyle italicBlueTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic, color: DarkCyan, fontWeight: FontWeight.bold);
-   return new Scaffold(  
+   return new Scaffold(          
         appBar: AppBar(
           title: Text('Home Page'),
+          backgroundColor: DarkCyan,
         ),
         drawer: CollapsingNavigationDrawer(),
         body: new Center(

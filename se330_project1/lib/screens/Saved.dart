@@ -16,6 +16,7 @@ class _SavedPageState extends State<Saved>{
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
    return new Scaffold( 
         appBar: AppBar(
+          backgroundColor: DarkCyan,
           title: Text('Saved'),
         ),
         drawer: CollapsingNavigationDrawer(),
