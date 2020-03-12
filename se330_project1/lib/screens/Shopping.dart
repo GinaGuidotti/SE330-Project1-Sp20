@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';   
+import 'package:flutter/material.dart';
+import 'package:se330_project1/globalvariables.dart';   
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 import 'package:se330_project1/model/CameraList.dart';
 
@@ -11,6 +12,7 @@ class _ShoppingPageState extends State<Shopping>{
    Widget build(BuildContext context) {     
    return new Scaffold( 
         appBar: AppBar(
+          backgroundColor: DarkCyan,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[               

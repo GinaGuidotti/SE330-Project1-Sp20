@@ -15,7 +15,8 @@ class _FavoritesPageState extends State<Favorites>{
    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
    return new Scaffold( 
-        appBar: AppBar(
+        appBar: AppBar(          
+          backgroundColor: DarkCyan,
           title: Text('Favorites'),
         ),
         drawer: CollapsingNavigationDrawer(),

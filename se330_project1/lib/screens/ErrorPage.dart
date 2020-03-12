@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';    
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
+import 'package:se330_project1/globalvariables.dart';
 
 class ErrorPage extends StatefulWidget { 
   @override
@@ -14,6 +15,7 @@ class _ErrorPageState extends State<ErrorPage>{
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
    
    return new Scaffold( 
+        backgroundColor: DarkCyan,
         appBar: AppBar(
           title: Text('Error 404'),
         ),
