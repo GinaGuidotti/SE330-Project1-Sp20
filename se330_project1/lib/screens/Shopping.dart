@@ -16,7 +16,7 @@ class _ShoppingPageState extends State<Shopping>{
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[               
-              Text('Shopping Page'),
+              Text('Our Cameras'),
               IconButton(
                 icon: Icon(Icons.search), 
                 onPressed: (){

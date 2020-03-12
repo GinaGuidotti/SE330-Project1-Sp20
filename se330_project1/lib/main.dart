@@ -103,7 +103,12 @@ class MyMainPage extends StatelessWidget{
         title: Text('Just Clicked Cameras'),
       ),
       drawer: CollapsingNavigationDrawer(),
-      body: Text('Future Login? or click to enter as guest', style: style),
+      body: Column(
+        children: <Widget>[
+          Text('This is the Main Page'),
+          
+        ],
+      ),
 
     );
   }

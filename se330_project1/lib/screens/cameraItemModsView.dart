@@ -212,7 +212,6 @@ class CameraModificationState extends State<CameraModifications> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold(  
-        backgroundColor: DarkCyan,
         body: Container(
           padding: EdgeInsets.only(left: 15, right: 15),
           child: ListView( 

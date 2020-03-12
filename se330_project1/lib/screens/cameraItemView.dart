@@ -23,12 +23,10 @@ class CameraItem extends StatelessWidget {
     TextStyle whiteStyle = TextStyle(fontSize: screenWidth*0.06, color: Colors.white); 
 
     final modificationsButton = Material(
-      elevation: 5.0,
-      //borderRadius: BorderRadius.circular(30.0),
+      elevation: 5.0, 
       color: DarkCyan,
       child: MaterialButton(
-        minWidth: screenWidth*0.5,
-        // padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
+        minWidth: screenWidth*0.5, 
         onPressed: () {
           print('MODIFICATIONS!'); 
           navigateToModPage(context);
@@ -38,12 +36,10 @@ class CameraItem extends StatelessWidget {
     );
     
     final addToCartButton = Material(
-      elevation: 5.0,
-      //borderRadius: BorderRadius.circular(30.0),
+      elevation: 5.0, 
       color: DarkCyan,
       child: MaterialButton(
-        minWidth: screenWidth*0.5,
-        // padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
+        minWidth: screenWidth*0.5, 
         onPressed: () {
           print('ADDING TO CART!'); 
           navigateToCart(context);
@@ -55,12 +51,11 @@ class CameraItem extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold( 
-        backgroundColor: DarkCyan,
         // This does not look nice at all and it makes me sad. Otherwise it works perfectly fine
         // it just does not blend well with the current app bar thats already there... this is a future fix
         // appBar: PreferredSize(
         //   preferredSize: Size.fromHeight(screenHeight*0.05),
-        //   child: AppBar(
+        //   child: AppBar( 
         //     leading: IconButton(
         //       onPressed: (){
         //         Navigator.pop(context);
