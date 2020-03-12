@@ -6,6 +6,7 @@ import 'package:se330_project1/screens/Shopping.dart';
 import 'package:se330_project1/screens/Favorites.dart'; 
 import 'package:se330_project1/screens/ContactUs.dart';
 import 'package:se330_project1/screens/home.dart';
+import 'package:se330_project1/screens/ErrorPage.dart';
 import 'package:se330_project1/screens/Cart.dart';
 
 class CollapsingNavigationDrawer extends StatefulWidget {
@@ -17,8 +18,8 @@ class CollapsingNavigationDrawer extends StatefulWidget {
 
 class CollapsingNavigationDrawerState extends State<CollapsingNavigationDrawer>
     with SingleTickerProviderStateMixin {
-  double maxWidth = 210;
-  double minWidth = 70;
+  double maxWidth = 200;
+  double minWidth = 75;
   bool isCollapsed = false;
   AnimationController _animationController;
   Animation<double> widthAnimation;
@@ -41,8 +42,7 @@ class CollapsingNavigationDrawerState extends State<CollapsingNavigationDrawer>
     );
   }
 
-  Widget getWidget(context, widget) {
-   double screenWidth = MediaQuery.of(context).size.width;
+  Widget getWidget(context, widget) { 
    double screenHeight = MediaQuery.of(context).size.height; 
     return Material(
       elevation: 80.0,
@@ -65,46 +65,50 @@ class CollapsingNavigationDrawerState extends State<CollapsingNavigationDrawer>
                         setState(() {
                           currentSelectedIndex = counter;
                         });
-                        print('\nSelected Item #: ' + currentSelectedIndex.toString());
-                        print('Path: ' + navigationItems[counter].path);
+                        // print('\nSelected Item #: ' + currentSelectedIndex.toString());
+                        // print('Path: ' + navigationItems[counter].path);
                         if(counter == 0 ){ //Home Page
-                          print('Home Page');
+                          // print('Home Page');
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => HomePage()),
+                            MaterialPageRoute(builder: (context) => HomePage()),  
                          );
                         }else if(counter == 1 ){ //Shopping Page
-                          print('Shop Page');
+                          // print('Shop Page');
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Shopping()),
                          );
                         }else if(counter == 2 ){ //Fav Page
-                          print('Fav Page');
+                          // print('Fav Page');
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Favorites()),
                          );
                         }else if(counter == 3 ){ //Saved Page
-                          print('Saved Page');
+                          // print('Saved Page');
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Saved()),
                          );
                         }else if(counter == 4 ){ //Cart Page
-                          print('Cart Page');
+                          // print('Cart Page');
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => Cart()),
                          );
                         }else if(counter == 5 ){ //AboutUs Page
-                          print('Contact Us Page');
+                          // print('Contact Us Page');
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => ContactUs()),
                          );
                         }else{
-                          print('Error Page');
+                          // print('Error Page');
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ErrorPage()),
+                         );
                         }
                         
                       },
