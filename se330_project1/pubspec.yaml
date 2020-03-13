@@ -12,10 +12,14 @@ dependencies:
   flutter_bloc: ^3.1.0 
   equatable: ^1.0.0  
 <<<<<<< HEAD
+<<<<<<< HEAD
   intl: ^0.16.1   
 =======
   intl: ^0.16.1    
 >>>>>>> pubspec.yaml change
+=======
+  intl: ^0.16.1    
+>>>>>>> refs/remotes/origin/michael
   flutter_secure_storage: ^3.3.1+1  
   http: ^0.12.0+4   
   flutter_tagging: ^1.1.0 
