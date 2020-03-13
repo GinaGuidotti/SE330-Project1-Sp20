@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';   
+import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 class Cart extends StatefulWidget { 
@@ -9,13 +10,15 @@ class Cart extends StatefulWidget {
 class _CartPageState extends State<Cart>{ 
   @override
   Widget build(BuildContext context) {    
-   double screenWidth = MediaQuery.of(context).size.width;
-   double screenHeight = MediaQuery.of(context).size.height; 
+   double screenWidth = MediaQuery.of(context).size.width; 
    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
    TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
-   return new Scaffold( 
+   return new MaterialApp( 
+     debugShowCheckedModeBanner: false,  
+     home: Scaffold(
         appBar: AppBar(
-          title: Text('About Us'),
+          title: Text('Cart'),
+          backgroundColor: DarkCyan,
         ),
         drawer: CollapsingNavigationDrawer(),
         body: new Center(
@@ -39,7 +42,9 @@ class _CartPageState extends State<Cart>{
               SizedBox(height: screenWidth * 0.02), 
             ],
           ), 
-        ));
+        )
+       )  
+    );
   }
   
 
