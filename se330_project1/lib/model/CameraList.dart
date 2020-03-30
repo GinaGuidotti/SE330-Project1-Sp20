@@ -79,7 +79,7 @@ class CameraListBody extends StatelessWidget {
 
                 ],
               ),
-              Divider(height: 20, color: Colors.grey,),
+              Divider(height: 20, color: DarkCyan, thickness: 3.0,),
             ],
           ),
           onTap: (){

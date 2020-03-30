@@ -116,8 +116,7 @@ class CameraItemBody extends StatelessWidget {
                       Icons.favorite,
                       color: theCameraList[chosenCameraNum].favorite ? DarkCyan : Colors.grey,
                     ), 
-                    onPressed: (){                      
-                      print('Fav!');
+                    onPressed: (){    
                       theCameraList[chosenCameraNum].clickedFavoriteButton();
                       (context as Element).markNeedsBuild(); //To get it to rebuild the icon button 
                     }
@@ -133,8 +132,7 @@ class CameraItemBody extends StatelessWidget {
                       Icons.bookmark, 
                       color: theCameraList[chosenCameraNum].saved ? DarkCyan : Colors.grey,
                     ), 
-                    onPressed: (){
-                      print('saved');
+                    onPressed: (){ 
                       theCameraList[chosenCameraNum].clickedSavedButton();   
                       (context as Element).markNeedsBuild();   //To get it to rebuild the icon button            
                     }
@@ -142,7 +140,7 @@ class CameraItemBody extends StatelessWidget {
 
                 ],
               ),
-              Divider(height: 20, color: Colors.grey,),
+              Divider(height: 20, color: DarkCyan, thickness: 3.0,),
             ],
           ),
           Container(

@@ -44,6 +44,7 @@ class CameraModificationState extends State<CameraModifications> {
   Future navigateToCart(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
   }
+  
   Future navigateBackToCameraItem(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => CameraItem()));
   }
