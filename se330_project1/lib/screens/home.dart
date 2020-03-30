@@ -51,6 +51,7 @@ class _HomePageState extends State<HomePage>{
                   style: blueStyle),
               ),
               SizedBox(height: screenWidth * 0.1),
+              Divider(height: 20, color: DarkCyan, thickness: 3.0,), 
               ListTile(
                 title: Text('About Our Company:', style: italicBlueTitle,),
                 subtitle: Text(

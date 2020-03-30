@@ -66,6 +66,7 @@ class _ContactUsPageState extends State<ContactUs>{
           int num = pastComments.length - 1;
           contactEmailSent = true;
           print("Last Comment: \"" + pastComments[num].comment + "\" from email address: " + pastComments[num].email);
+          (context as Element).markNeedsBuild();
         },
          
         child: contactEmailSent ? Text('Email Sent!', textAlign: TextAlign.center,) : Text('Send Message', textAlign: TextAlign.center,) 

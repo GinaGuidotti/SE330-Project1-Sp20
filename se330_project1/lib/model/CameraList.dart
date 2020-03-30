@@ -28,7 +28,7 @@ class CameraListBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
+    TextStyle style = TextStyle(fontSize: screenWidth*0.06, color: Colors.black);  
     
     
     return ListView.builder(
@@ -55,8 +55,7 @@ class CameraListBody extends StatelessWidget {
                       Icons.favorite,
                       color: theCameraList[index].favorite ? DarkCyan : Colors.grey,
                     ), 
-                    onPressed: (){                      
-                      print('Fav!');
+                    onPressed: (){      
                       theCameraList[index].clickedFavoriteButton();
                       (context as Element).markNeedsBuild(); //To get it to rebuild the icon button 
                     }
@@ -72,8 +71,7 @@ class CameraListBody extends StatelessWidget {
                       Icons.bookmark, 
                       color: theCameraList[index].saved ? DarkCyan : Colors.grey,
                     ), 
-                    onPressed: (){
-                      print('saved');
+                    onPressed: (){ 
                       theCameraList[index].clickedSavedButton();   
                       (context as Element).markNeedsBuild();   //To get it to rebuild the icon button            
                     }
@@ -81,7 +79,7 @@ class CameraListBody extends StatelessWidget {
 
                 ],
               ),
-              Divider(height: 20, color: Colors.grey,),
+              Divider(height: 20, color: DarkCyan, thickness: 3.0,),
             ],
           ),
           onTap: (){

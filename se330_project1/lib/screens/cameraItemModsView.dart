@@ -44,6 +44,7 @@ class CameraModificationState extends State<CameraModifications> {
   Future navigateToCart(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
   }
+  
   Future navigateBackToCameraItem(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => CameraItem()));
   }
@@ -212,7 +213,6 @@ class CameraModificationState extends State<CameraModifications> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold(  
-        backgroundColor: DarkCyan,
         body: Container(
           padding: EdgeInsets.only(left: 15, right: 15),
           child: ListView( 
