@@ -18,7 +18,7 @@ class CameraItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
+    //double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     TextStyle whiteStyle = TextStyle(fontSize: screenWidth*0.06, color: Colors.white); 
 
@@ -89,7 +89,7 @@ class CameraItemBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    TextStyle largeStyle = TextStyle(fontSize: screenWidth*0.07, color: DarkCyan); 
+    //TextStyle largeStyle = TextStyle(fontSize: screenWidth*0.07, color: DarkCyan); 
     TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: DarkCyan);   
     
     return Container(

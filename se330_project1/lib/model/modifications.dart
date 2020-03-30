@@ -1,7 +1,6 @@
 // import 'package:flutter/material.dart';
-import 'dart:ffi';
-
-import 'package:flutter/cupertino.dart';
+//import 'dart:ffi';
+//import 'package:flutter/cupertino.dart';
 
 class ColorChoice{
   double price;
