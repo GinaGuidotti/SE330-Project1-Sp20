@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/screens/cameraItemView.dart';
-import 'package:carousel_slider/carousel_slider.dart'; //Possible Idea
+//import 'package:carousel_slider/carousel_slider.dart'; //Possible Idea
 import 'package:se330_project1/main.dart';
 
 int chosenCameraNum;

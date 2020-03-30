@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart'; 
 import 'package:se330_project1/globalvariables.dart';  
-import 'package:flutter_bloc/flutter_bloc.dart';  
-import 'dart:convert'; 
+//import 'package:flutter_bloc/flutter_bloc.dart';  
+//import 'dart:convert'; 
 import 'package:se330_project1/screens/home.dart'; 
-import 'package:se330_project1/navigation/custom_navigation_drawer.dart'; 
+//import 'package:se330_project1/navigation/custom_navigation_drawer.dart'; 
 import 'package:se330_project1/model/CameraList.dart'; 
 
 void main(){ 
@@ -13,6 +13,7 @@ void main(){
 }
 
 List<Cameras> theCameraList = new List<Cameras>();
+List<Cameras> recentCameras = new List<Cameras>();
 
 class MyApp extends StatelessWidget{
 
@@ -111,22 +112,23 @@ class MyMainPage extends StatelessWidget{
       ),
     );
 
-    final createAccountButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: DarkCyan,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width*0.9,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
-        onPressed: () { 
-          //(context as Element).markNeedsBuild();
-          navigateToAccountCreation(context);
-        },         
-        child: Text('Create Account', style: style, textAlign: TextAlign.center,)              
-      ),
-    );
+    // final createAccountButton = Material(
+    //   elevation: 5.0,
+    //   borderRadius: BorderRadius.circular(30.0),
+    //   color: DarkCyan,
+    //   child: MaterialButton(
+    //     minWidth: MediaQuery.of(context).size.width*0.9,
+    //     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
+    //     onPressed: () { 
+    //       //(context as Element).markNeedsBuild();
+    //       navigateToAccountCreation(context);
+    //     },         
+    //     child: Text('Create Account', style: style, textAlign: TextAlign.center,)              
+    //   ),
+    // );
 
     theCameraList = new List<Cameras>(); //Erase all previous items in it
+    recentCameras = new List<Cameras>();
 
     theCameraList.add(
       new Cameras(
@@ -187,7 +189,8 @@ class MyMainPage extends StatelessWidget{
         +" travel. And it works seamlessly with compatible smartphones, making it easier than ever to share your great photos. Even if you've never"
         +" picked up a DSLR camera, you can take beautiful pictures with D3500."
         )
-      );
+      ); 
+    recentCameras.add(theCameraList[0]); //Just to have at least one in there for search
     
     return Scaffold(
       appBar: AppBar(

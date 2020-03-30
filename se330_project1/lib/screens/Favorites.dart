@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 import 'package:se330_project1/model/CameraList.dart';
-import 'package:se330_project1/screens/cameraItemModsView.dart';
-import 'package:se330_project1/screens/Cart.dart';
+//import 'package:se330_project1/screens/cameraItemModsView.dart';
+//import 'package:se330_project1/screens/Cart.dart';
 import 'package:se330_project1/main.dart';
+import 'package:se330_project1/screens/searchCameras.dart';
 
 class Favorites extends StatefulWidget { 
   @override
@@ -25,7 +26,7 @@ class _FavoritesPageState extends State<Favorites>{
               IconButton(
                 icon: Icon(Icons.search), 
                 onPressed: (){
-                  print('FUTURE SEARCH!');
+                  showSearch(context: context, delegate: Search());
                 }
               ),
             ],
