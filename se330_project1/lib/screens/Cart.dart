@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/model/CartItems.dart';
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
-import 'package:se330_project1/model/modifications.dart';
-import 'package:se330_project1/model/CameraList.dart';
-import 'package:se330_project1/screens/cameraItemModsView.dart';
-import 'package:se330_project1/main.dart';
 
 class Cart extends StatefulWidget { 
   @override
@@ -15,9 +11,9 @@ class Cart extends StatefulWidget {
 class _CartPageState extends State<Cart>{ 
   @override
   Widget build(BuildContext context) {    
-   double screenWidth = MediaQuery.of(context).size.width; 
-   TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
-   TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);  
+   //double screenWidth = MediaQuery.of(context).size.width; 
+   //TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
+   //TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);  
    return new Scaffold( 
           backgroundColor: DarkCyan,
 

@@ -203,8 +203,7 @@ class CameraModificationState extends State<CameraModifications> {
           camerasInCart.add(CartList(theCameraList[chosenCameraNum].brand, theCameraList[chosenCameraNum].model,
            theCameraList[chosenCameraNum].price, theCameraList[chosenCameraNum].assetPath,
             theCameraList[chosenCameraNum].cameraInfo, 1, totalModificationPrice, selectedColor, 
-            selectedExtraLens, selectedPlan, selectedConfig, selectedMemoryPack,
-             totalModificationPrice+theCameraList[chosenCameraNum].price));
+            selectedExtraLens, selectedPlan, selectedConfig, selectedMemoryPack,));
         },
         child: Text('Add To Cart', style: whiteStyle)    
       ),
