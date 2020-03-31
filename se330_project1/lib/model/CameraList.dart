@@ -3,6 +3,9 @@ import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/screens/cameraItemView.dart';
 //import 'package:carousel_slider/carousel_slider.dart'; //Possible Idea
 import 'package:se330_project1/main.dart';
+import 'package:se330_project1/screens/searchCameras.dart';
+import 'package:se330_project1/screens/Cart.dart';
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 int chosenCameraNum;
 
@@ -25,13 +28,44 @@ class CameraListBody extends StatelessWidget {
     Navigator.push(context, MaterialPageRoute(builder: (context) => CameraItem()));
   }
 
+  Future navigateToCart(context) async {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Cart())); 
+  }
+  //to see if the cart is empty or not
+  bool cartEmpty = camerasInCart.isEmpty;
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     TextStyle style = TextStyle(fontSize: screenWidth*0.06, color: Colors.black);  
-    
-    
-    return ListView.builder(
+    insideCart = false; //used for header bar
+     
+     return Scaffold(     
+      appBar: AppBar(
+          backgroundColor: DarkCyan,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[               
+              Text('Our Cameras'), 
+              IconButton(
+                color: Colors.white,
+                disabledColor: DarkCyan,
+                icon: Icon(Icons.shopping_cart),
+                onPressed: cartEmpty ? null : (){
+                  navigateToCart(context);
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.search), 
+                onPressed: (){ 
+                  showSearch(context: context, delegate: Search());
+                }
+              ),
+            ],
+          ),
+        ),
+    drawer: CollapsingNavigationDrawer(),
+    body: ListView.builder(
       itemCount: theCameraList.length,
       itemBuilder: (context, index){
         return ListTile(
@@ -89,6 +123,7 @@ class CameraListBody extends StatelessWidget {
           },
         );
       },
+    ),
     );
      
   }

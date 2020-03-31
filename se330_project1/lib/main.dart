@@ -16,6 +16,8 @@ void main(){
 List<Cameras> theCameraList = new List<Cameras>();
 List<Cameras> recentCameras = new List<Cameras>();
 List<CartList> camerasInCart = new List<CartList>();
+double totalCartPrice = 0.0;
+bool insideCart = false; //might get rid of this later
 
 class MyApp extends StatelessWidget{
 

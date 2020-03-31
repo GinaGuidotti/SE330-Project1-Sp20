@@ -5,13 +5,16 @@ import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/model/modifications.dart';
 import 'package:se330_project1/main.dart';
 
-class CartListHome extends StatelessWidget {
+class CartListHome extends StatelessWidget {  
+  //to see if the cart is empty or not
+  bool cartEmpty = camerasInCart.isEmpty;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold( 
-        body: CartListBody(),
+        body: cartEmpty ? null : CartListBody(),
       ),
     );
   }
@@ -101,7 +104,7 @@ class CartListBody extends StatelessWidget{
     TextStyle modTitle = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);
     
     Widget _buildCard(int index) => SizedBox(
-      height: screenHeight*0.6,
+      height: screenHeight*0.75,
       child: Card(
         child: Column(
           children: [
@@ -120,16 +123,9 @@ class CartListBody extends StatelessWidget{
             ListTile(
               title: Text('Quantity '+(camerasInCart[index].quantity).toString(),
                     style: style, textAlign: TextAlign.left),
-              //subtitle: 
-            ),
-            Divider(),
-            ListTile(
-              //leading: IconButton(color: Colors.Red, Icons.cancel, onPressed: camerasInCart[index].delete(
-                //CartList(theCameraList[index].brand, theCameraList[index].model,
-                 // theCameraList[index].price, theCameraList[index].assetPath,
-                 // theCameraList[index].cameraInfo, theCameraList[index].quantity, theCameraList[index].totalModificationPrice, theCameraList[index].selectedColor, 
-                 // theCameraList[index].selectedExtraLens, theCameraList[index].selectedPlan, theCameraList[index].selectedConfig, theCameraList[index].selectedMemoryPack,));),),
-              title: Text('Total: \$'+(camerasInCart[index].totalPrice).toString(),
+                    // (context as Element).markNeedsBuild();   //To get it to rebuild the quantity!!!! 
+                    //not in this area, but when the buttons are pushed, have the above line in there
+              subtitle: Text('Total: \$'+(camerasInCart[index].totalPrice).toString(),
                     style: style, textAlign: TextAlign.left),
             )
           ]
