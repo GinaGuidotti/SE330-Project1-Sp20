@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/model/CameraList.dart';
+import 'package:se330_project1/model/CartItems.dart';
 import 'package:se330_project1/model/modifications.dart';
 import 'package:se330_project1/screens/Cart.dart';
 import 'package:se330_project1/screens/cameraItemView.dart';
@@ -13,27 +14,27 @@ class CameraModifications extends StatefulWidget{
 } 
 
 double totalModificationPrice = 0.00;
+ColorChoice selectedColor;
+LensStyle selectedExtraLens;
+ProtectionPlan selectedPlan;
+ConfigPack selectedConfig;
+ExtraMemoryPack selectedMemoryPack;
 
 class CameraModificationState extends State<CameraModifications> {
   List<ColorChoice> theModColors = ColorChoice.getColorChoices(); 
   List<DropdownMenuItem<ColorChoice>> dropdownColorItems;
-  ColorChoice selectedColor;
 
   List<LensStyle> theModLens = LensStyle.getLensStyles();
   List<DropdownMenuItem<LensStyle>> dropdownLensItems;
-  LensStyle selectedExtraLens;
 
   List<ProtectionPlan> theModPlans = ProtectionPlan.getPlans();
   List<DropdownMenuItem<ProtectionPlan>> dropdownProtPlanItems;
-  ProtectionPlan selectedPlan;
 
   List<ConfigPack> theModConfigs = ConfigPack.getConfigPacks();
   List<DropdownMenuItem<ConfigPack>> dropdownConfigItems;
-  ConfigPack selectedConfig;
 
   List<ExtraMemoryPack> theModCards = ExtraMemoryPack.getMemoryCards();
   List<DropdownMenuItem<ExtraMemoryPack>> dropdownMemoryItems;
-  ExtraMemoryPack selectedMemoryPack;
 
   double colorPrice = 0;
   double lensPrice = 0;
@@ -199,6 +200,10 @@ class CameraModificationState extends State<CameraModifications> {
         minWidth: screenWidth*0.5, 
         onPressed: () { 
           navigateToCart(context);
+          camerasInCart.add(CartList(theCameraList[chosenCameraNum].brand, theCameraList[chosenCameraNum].model,
+           theCameraList[chosenCameraNum].price, theCameraList[chosenCameraNum].assetPath,
+            theCameraList[chosenCameraNum].cameraInfo, 1, totalModificationPrice, selectedColor, 
+            selectedExtraLens, selectedPlan, selectedConfig, selectedMemoryPack,));
         },
         child: Text('Add To Cart', style: whiteStyle)    
       ),
