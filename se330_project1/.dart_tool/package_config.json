@@ -261,9 +261,9 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/rosa9/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/test_api-0.2.11",
+      "rootUri": "file:///C:/Users/rosa9/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/test_api-0.2.15",
       "packageUri": "lib/",
-      "languageVersion": "2.2"
+      "languageVersion": "2.4"
     },
     {
       "name": "typed_data",
@@ -290,7 +290,7 @@
       "languageVersion": "2.6"
     }
   ],
-  "generated": "2020-03-10T18:20:23.258072Z",
+  "generated": "2020-03-31T16:13:14.654493Z",
   "generator": "pub",
-  "generatorVersion": "2.8.0-dev.5.0.flutter-fc3af737c7"
+  "generatorVersion": "2.8.0-dev.12.0.flutter-9983424a3c"
 }
