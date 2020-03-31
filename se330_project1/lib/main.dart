@@ -4,7 +4,8 @@ import 'package:se330_project1/globalvariables.dart';
 //import 'dart:convert'; 
 import 'package:se330_project1/screens/home.dart'; 
 //import 'package:se330_project1/navigation/custom_navigation_drawer.dart'; 
-import 'package:se330_project1/model/CameraList.dart'; 
+import 'package:se330_project1/model/CameraList.dart';
+import 'package:se330_project1/model/CartItems.dart';  
 
 void main(){ 
   runApp(
@@ -14,6 +15,7 @@ void main(){
 
 List<Cameras> theCameraList = new List<Cameras>();
 List<Cameras> recentCameras = new List<Cameras>();
+List<CartList> camerasInCart = new List<CartList>();
 
 class MyApp extends StatelessWidget{
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/model/CameraList.dart';
+import 'package:se330_project1/model/CartItems.dart';
 import 'package:se330_project1/screens/cameraItemModsView.dart';
 import 'package:se330_project1/screens/Cart.dart';
 import 'package:se330_project1/main.dart';
@@ -43,6 +44,10 @@ class CameraItem extends StatelessWidget {
         onPressed: () {
           print('ADDING TO CART!'); 
           navigateToCart(context);
+          camerasInCart.add(CartList(theCameraList[chosenCameraNum].brand, theCameraList[chosenCameraNum].model,
+           theCameraList[chosenCameraNum].price, theCameraList[chosenCameraNum].assetPath,
+            theCameraList[chosenCameraNum].cameraInfo, 1, totalModificationPrice, selectedColor, 
+            selectedExtraLens, selectedPlan, selectedConfig, selectedMemoryPack,));
         },
         child: Text('Add To Cart', style: whiteStyle)    
       ),
