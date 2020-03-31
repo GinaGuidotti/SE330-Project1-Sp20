@@ -18,4 +18,3 @@ const Navy = Color.fromRGBO(0, 0, 128, 1);
 
 TextStyle listTitleDefaultTextStyle = TextStyle(color: Colors.white70, fontSize: 20.0, fontWeight: FontWeight.w600);
 TextStyle listTitleSelectedTextStyle = TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w600);
- 
