@@ -13,27 +13,27 @@ class CameraModifications extends StatefulWidget{
 } 
 
 double totalModificationPrice = 0.00;
+ColorChoice selectedColor;
+LensStyle selectedExtraLens;
+ProtectionPlan selectedPlan;
+ConfigPack selectedConfig;
+ExtraMemoryPack selectedMemoryPack;
 
 class CameraModificationState extends State<CameraModifications> {
   List<ColorChoice> theModColors = ColorChoice.getColorChoices(); 
   List<DropdownMenuItem<ColorChoice>> dropdownColorItems;
-  ColorChoice selectedColor;
 
   List<LensStyle> theModLens = LensStyle.getLensStyles();
   List<DropdownMenuItem<LensStyle>> dropdownLensItems;
-  LensStyle selectedExtraLens;
 
   List<ProtectionPlan> theModPlans = ProtectionPlan.getPlans();
   List<DropdownMenuItem<ProtectionPlan>> dropdownProtPlanItems;
-  ProtectionPlan selectedPlan;
 
   List<ConfigPack> theModConfigs = ConfigPack.getConfigPacks();
   List<DropdownMenuItem<ConfigPack>> dropdownConfigItems;
-  ConfigPack selectedConfig;
 
   List<ExtraMemoryPack> theModCards = ExtraMemoryPack.getMemoryCards();
   List<DropdownMenuItem<ExtraMemoryPack>> dropdownMemoryItems;
-  ExtraMemoryPack selectedMemoryPack;
 
   double colorPrice = 0;
   double lensPrice = 0;
