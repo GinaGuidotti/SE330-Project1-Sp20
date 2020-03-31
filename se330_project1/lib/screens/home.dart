@@ -11,11 +11,11 @@ class _HomePageState extends State<HomePage>{
 
   Widget build(BuildContext context) {    
    double screenWidth = MediaQuery.of(context).size.width;
-   double screenHeight = MediaQuery.of(context).size.height; 
-   TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
+   //double screenHeight = MediaQuery.of(context).size.height; 
+   //TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
    TextStyle blueStyle = TextStyle(fontSize: screenWidth*0.05, color: DarkCyan);   
    TextStyle blueLargeStyle = TextStyle(fontSize: screenWidth*0.07, color: DarkCyan, fontWeight: FontWeight.bold); 
-   TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
+   //TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
    TextStyle italicBlueTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic, color: DarkCyan, fontWeight: FontWeight.bold);
    return new Scaffold(          
         appBar: AppBar(
@@ -51,6 +51,7 @@ class _HomePageState extends State<HomePage>{
                   style: blueStyle),
               ),
               SizedBox(height: screenWidth * 0.1),
+              Divider(height: 20, color: DarkCyan, thickness: 3.0,), 
               ListTile(
                 title: Text('About Our Company:', style: italicBlueTitle,),
                 subtitle: Text(

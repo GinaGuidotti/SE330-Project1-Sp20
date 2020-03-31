@@ -1,5 +1,5 @@
 name: se330_project1
-description: A new Flutter project.
+description: Software Engineering 330 - Human Factors and User Interface Project 1
 
 version: 1.0.0+1
 
@@ -50,3 +50,4 @@ flutter:
     - assets/CanonC200EF.jpg 
     - assets/NikonD5.jpg 
     - assets/NikonD3500.jpg
+    - assets/JCClogo.jpg

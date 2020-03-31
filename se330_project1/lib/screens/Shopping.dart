@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:se330_project1/globalvariables.dart';   
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 import 'package:se330_project1/model/CameraList.dart';
+//import 'package:se330_project1/main.dart'; 
+import 'package:se330_project1/screens/searchCameras.dart';
 
 class Shopping extends StatefulWidget { 
   @override
@@ -16,11 +18,11 @@ class _ShoppingPageState extends State<Shopping>{
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[               
-              Text('Shopping Page'),
+              Text('Our Cameras'),
               IconButton(
                 icon: Icon(Icons.search), 
-                onPressed: (){
-                  print('FUTURE SEARCH!');
+                onPressed: (){ 
+                  showSearch(context: context, delegate: Search());
                 }
               ),
             ],
@@ -32,3 +34,5 @@ class _ShoppingPageState extends State<Shopping>{
   }
 
 } 
+
+  
