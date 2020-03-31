@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';   
 import 'package:se330_project1/globalvariables.dart';
+import 'package:se330_project1/model/CartItems.dart';
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 import 'package:se330_project1/model/modifications.dart';
 import 'package:se330_project1/model/CameraList.dart';
@@ -12,43 +13,20 @@ class Cart extends StatefulWidget {
 }
 
 class _CartPageState extends State<Cart>{ 
- // double totalModificationPrice;
- // ColorChoice selectedColor;
- // LensStyle selectedExtraLens;
- // ProtectionPlan selectedPlan;
- // ConfigPack chosenselectedConfig;
- // ExtraMemoryPack selectedMemoryPack;
-
   @override
   Widget build(BuildContext context) {    
    double screenWidth = MediaQuery.of(context).size.width; 
    TextStyle style = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);  
-   TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);
+   TextStyle italicTitle = TextStyle(fontSize: screenWidth*0.065, fontStyle: FontStyle.italic);  
+   return new Scaffold( 
+          backgroundColor: DarkCyan,
 
-  /* final paymentButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: DarkCyan,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
-        onPressed: () {
-          print('All sent!');
-          EmailDatabase theInfo = new EmailDatabase(userEmail, userComment);
-          contactEmailSent = true;
-          pastComments.add(theInfo);
-          int num = pastComments.length - 1;
-          contactEmailSent = true;
-          print("Last Comment: \"" + pastComments[num].comment + "\" from email address: " + pastComments[num].email);
-          (context as Element).markNeedsBuild();
-        },
-         
-        child: contactEmailSent ? Text('Email Sent!', textAlign: TextAlign.center,) : Text('Continue to Payment', textAlign: TextAlign.center,) 
-             
-      ),
-  );*/
+        drawer: CollapsingNavigationDrawer(),
+        body: CartListHome(),
+      );
+  }
   
-   return ListTile(
+   /*return ListTile(
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -82,11 +60,8 @@ class _CartPageState extends State<Cart>{
               ),
               Divider(height: 20, color: DarkCyan, thickness: 3.0,),
             ],
-          ),
-          onTap: (){
-          },
-          
-        );
+          ),       
+        );*/
    /*return new MaterialApp( 
      debugShowCheckedModeBanner: false,  
      home: Scaffold(
@@ -153,5 +128,3 @@ class _CartPageState extends State<Cart>{
     );*/
   }
   
-
-} 
