@@ -120,7 +120,16 @@ class CartListBody extends StatelessWidget{
             ListTile(
               title: Text('Quantity '+(camerasInCart[index].quantity).toString(),
                     style: style, textAlign: TextAlign.left),
-              subtitle: Text('Total: \$'+(camerasInCart[index].totalPrice).toString(),
+              //subtitle: 
+            ),
+            Divider(),
+            ListTile(
+              //leading: IconButton(color: Colors.Red, Icons.cancel, onPressed: camerasInCart[index].delete(
+                //CartList(theCameraList[index].brand, theCameraList[index].model,
+                 // theCameraList[index].price, theCameraList[index].assetPath,
+                 // theCameraList[index].cameraInfo, theCameraList[index].quantity, theCameraList[index].totalModificationPrice, theCameraList[index].selectedColor, 
+                 // theCameraList[index].selectedExtraLens, theCameraList[index].selectedPlan, theCameraList[index].selectedConfig, theCameraList[index].selectedMemoryPack,));),),
+              title: Text('Total: \$'+(camerasInCart[index].totalPrice).toString(),
                     style: style, textAlign: TextAlign.left),
             )
           ]
