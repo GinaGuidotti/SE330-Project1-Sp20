@@ -6,6 +6,7 @@ import 'package:se330_project1/model/modifications.dart';
 import 'package:se330_project1/screens/Cart.dart';
 import 'package:se330_project1/screens/cameraItemView.dart';
 import 'package:se330_project1/main.dart';
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 class CameraModifications extends StatefulWidget{
   
@@ -186,7 +187,8 @@ class CameraModificationState extends State<CameraModifications> {
       color: DarkCyan,
       child: MaterialButton(
         minWidth: screenWidth*0.5, 
-        onPressed: () { 
+        onPressed: () {           
+          insideCart = false; //used for header bar
           navigateBackToCameraItem(context);
         },
         child: Icon(Icons.chevron_left, color: Colors.white, size: screenWidth*0.06),
@@ -198,7 +200,9 @@ class CameraModificationState extends State<CameraModifications> {
       color: DarkCyan,
       child: MaterialButton(
         minWidth: screenWidth*0.5, 
-        onPressed: () { 
+        onPressed: () {           
+          insideCart = true; //used for header bar
+          (context as Element).markNeedsBuild();   //To get it to rebuild the icon button  
           totalCartPrice = totalCartPrice + theCameraList[chosenCameraNum].price + totalModificationPrice;
           navigateToCart(context);
           camerasInCart.add(CartList(theCameraList[chosenCameraNum].brand, theCameraList[chosenCameraNum].model,
@@ -218,7 +222,18 @@ class CameraModificationState extends State<CameraModifications> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
-      home: Scaffold(  
+      home: Scaffold( 
+        appBar: AppBar(
+          backgroundColor: DarkCyan,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[               
+              Text('Modifications'), 
+               
+            ],
+          ),
+        ),
+        drawer: CollapsingNavigationDrawer(), 
         body: Container(
           padding: EdgeInsets.only(left: 15, right: 15),
           child: ListView( 

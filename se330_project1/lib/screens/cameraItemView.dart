@@ -5,6 +5,7 @@ import 'package:se330_project1/model/CartItems.dart';
 import 'package:se330_project1/screens/cameraItemModsView.dart';
 import 'package:se330_project1/screens/Cart.dart';
 import 'package:se330_project1/main.dart';
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 class CameraItem extends StatelessWidget {
 
@@ -13,7 +14,9 @@ class CameraItem extends StatelessWidget {
   }
 
   Future navigateToCart(context) async {
+    
     Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+    //this only pushes the body of the shopping scaffold to be cart
   }
 
 
@@ -29,7 +32,7 @@ class CameraItem extends StatelessWidget {
       child: MaterialButton(
         minWidth: screenWidth*0.5, 
         onPressed: () {
-          print('MODIFICATIONS!'); 
+          insideCart = false; //used for header bar 
           navigateToModPage(context);
         },
         child: Text('Modifications', style: whiteStyle)    
@@ -42,7 +45,8 @@ class CameraItem extends StatelessWidget {
       child: MaterialButton(
         minWidth: screenWidth*0.5, 
         onPressed: () {
-          print('ADDING TO CART!'); 
+          insideCart = true; //used for header bar 
+           (context as Element).markNeedsBuild();   //To get it to rebuild the icon button  
           navigateToCart(context);          
           totalCartPrice = totalCartPrice + theCameraList[chosenCameraNum].price + totalModificationPrice;
           camerasInCart.add(CartList(theCameraList[chosenCameraNum].brand, theCameraList[chosenCameraNum].model,
@@ -57,25 +61,22 @@ class CameraItem extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold( 
-        // This does not look nice at all and it makes me sad. Otherwise it works perfectly fine
-        // it just does not blend well with the current app bar thats already there... this is a future fix
-        // appBar: PreferredSize(
-        //   preferredSize: Size.fromHeight(screenHeight*0.05),
-        //   child: AppBar( 
-        //     leading: IconButton(
-        //       onPressed: (){
-        //         Navigator.pop(context);
-        //       },
-        //       icon: Icon(
-        //         Icons.chevron_left,
-        //       )
-        //     ), 
-        //     title: Text(
-        //       theCameraList[chosenCameraNum].brand + " - " + theCameraList[chosenCameraNum].model
-        //     ),
-        //     backgroundColor: DarkCyan,
-        //   ),
-        // ),
+        appBar: AppBar(
+          backgroundColor: DarkCyan,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[               
+              Text('Camera Information '), 
+              IconButton(
+                icon: Icon(Icons.short_text),
+                onPressed: (){
+                  navigateToCart(context);
+                },
+              ), 
+            ],
+          ),
+        ),
+        drawer: CollapsingNavigationDrawer(),
         body: CameraItemBody(),
         bottomNavigationBar: Row(
           mainAxisAlignment: MainAxisAlignment.center,
