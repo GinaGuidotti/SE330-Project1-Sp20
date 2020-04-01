@@ -3,6 +3,7 @@ import 'package:se330_project1/globalvariables.dart';
 import 'package:se330_project1/model/CartItems.dart';
 import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 import 'package:se330_project1/main.dart';
+import 'package:se330_project1/screens/PersonalInfo.dart';
 
 class Cart extends StatefulWidget { 
   @override
@@ -11,7 +12,7 @@ class Cart extends StatefulWidget {
 
 class _CartPageState extends State<Cart>{ 
    Future navigateToPayment(context) async {
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => Purchase()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalInfo()));
   }
   
   @override
