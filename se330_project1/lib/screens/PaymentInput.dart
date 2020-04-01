@@ -22,7 +22,7 @@ class PaymentTypePage extends State<PaymentType>{
   }
 
   Future navigateToReviewAllInfo(context) async { 
-    Navigator.push(context, MaterialPageRoute(builder: (context) => ReviewList()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ReviewAllInfo()));
   }
  
 
@@ -51,7 +51,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final streetAddressField = TextField(
       onChanged: (String value){ 
-        streetAddress = value;
+        streetAddress = value+ " ";
       }, 
       style: style,
       decoration: InputDecoration(
@@ -63,7 +63,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final cityField = TextField(
       onChanged: (String value){ 
-        city = value;
+        city = value+ " ";
       }, 
       style: style,
       decoration: InputDecoration(
@@ -75,7 +75,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final stateField = TextField(
       onChanged: (String value){ 
-        state = value;
+        state = value+ " ";
       }, 
       style: style,
       decoration: InputDecoration(
@@ -87,7 +87,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final zipCodeField = TextField(
       onChanged: (String value){ 
-        zipCode = value;
+        zipCode = value+ " ";
       }, 
       style: style,
       decoration: InputDecoration(
@@ -99,7 +99,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final nameField = TextField(
       onChanged: (String value){ 
-        nameOnCard = value;
+        nameOnCard = value+ " ";
       }, 
       style: style,
       decoration: InputDecoration(
@@ -111,7 +111,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final creditCardField = TextField(
       onChanged: (String value){ 
-        creditNumber = value;
+        creditNumber = value+ " ";
       }, 
       obscureText: true,
       style: style,
@@ -124,7 +124,7 @@ class PaymentTypePage extends State<PaymentType>{
 
     final cvvField = TextField(
       onChanged: (String value){ 
-        cvv = value;
+        cvv = value+ " ";
       }, 
       style: style,
       decoration: InputDecoration(
@@ -136,7 +136,7 @@ class PaymentTypePage extends State<PaymentType>{
        
     final exDateField = TextField(
       onChanged: (String value){ 
-        expirationDate = value;
+        expirationDate = value + " ";
       }, 
       style: style,
       decoration: InputDecoration(

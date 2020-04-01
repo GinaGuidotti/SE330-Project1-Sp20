@@ -63,7 +63,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
 
     final firstNameField = TextField(
       onChanged: (String value){ 
-        firstName = value;
+        firstName = value+ " ";
       }, 
       obscureText: false,
       style: style,
@@ -76,7 +76,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
 
     final lastNameField = TextField(
       onChanged: (String value){ 
-        lastName = value;
+        lastName = value+ " ";
       }, 
       obscureText: false,
       style: style,
@@ -89,7 +89,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
     
     final addressField = TextField(
       onChanged: (String value){ 
-        address = value;
+        address = value+ " ";
       }, 
       obscureText: false,
       style: style,
@@ -102,7 +102,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
 
     final cityField = TextField(
       onChanged: (String value){ 
-        city = value;
+        city = value+ " ";
       }, 
       obscureText: false,
       style: style,
@@ -115,7 +115,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
 
     final zipCodeField = TextField(
       onChanged: (String value){ 
-        zipcode = value;
+        zipcode = value+ " ";
       }, 
       obscureText: false,
       style: style,
@@ -128,7 +128,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
 
     final stateField = TextField(
       onChanged: (String value){ 
-        state = value;
+        state = value+ " ";
       }, 
       obscureText: false,
       style: style,
@@ -141,7 +141,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
 
     final emailField = TextField(
       onChanged: (String value){ 
-        email = value;
+        email = value+ " ";
       }, 
       obscureText: false,
       style: style,
