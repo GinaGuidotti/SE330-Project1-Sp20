@@ -38,15 +38,14 @@ class CameraListBody extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     TextStyle style = TextStyle(fontSize: screenWidth*0.06, color: Colors.black);  
-    insideCart = false; //used for header bar
-     
+    insideCart = false; //used for header 
      return Scaffold(     
       appBar: AppBar(
           backgroundColor: DarkCyan,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[               
-              Text('Our Cameras'), 
+              Text('Our Cameras', textAlign: TextAlign.left,), 
               IconButton(
                 color: Colors.white,
                 disabledColor: DarkCyan,
@@ -117,7 +116,7 @@ class CameraListBody extends StatelessWidget {
             ],
           ),
           onTap: (){
-            print(theCameraList[index].model);
+            // print(theCameraList[index].model);
             chosenCameraNum = index;
             navigateToSubPage(context);
           },
