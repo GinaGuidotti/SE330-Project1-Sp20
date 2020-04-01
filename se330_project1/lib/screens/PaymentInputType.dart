@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:se330_project1/globalvariables.dart';  
 import 'package:se330_project1/screens/home.dart'; 
 import 'package:se330_project1/model/CameraList.dart';
-import 'package:se330_project1/model/CartItems.dart';  
+import 'package:se330_project1/model/PaymentDatabase.dart';  
 import 'package:se330_project1/main.dart';
 
 class PaymentType extends StatelessWidget{
@@ -24,8 +24,7 @@ class PaymentType extends StatelessWidget{
 }
 
 class PaymentTypePage extends StatelessWidget{
-  String  streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard;
-  DateFormat expirationDate = new DateFormat(); 
+  String  streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate;
 
   // Future navigateToHome(context) async {
   //   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
@@ -130,6 +129,18 @@ class PaymentTypePage extends StatelessWidget{
           OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
        
+    final exDateField = TextField(
+      onChanged: (String value){ 
+        expirationDate = value;
+      }, 
+      style: style,
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: "CC Expiration Date",
+        border:
+          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+    );
+
     final submitPaymentButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
@@ -137,7 +148,8 @@ class PaymentTypePage extends StatelessWidget{
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width*0.9,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
-        onPressed: () {           
+        onPressed: () {    
+          paymentInfo.add(new PaymentData(streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate));       
         },         
         child: Text('Submit Payment', style: style, textAlign: TextAlign.center,)              
       ),
@@ -158,7 +170,7 @@ class PaymentTypePage extends StatelessWidget{
         children: <Widget>[
           SizedBox(height: screenWidth*0.10,),
           //SizedBox(height: screenHeight*0.2, child: Image.asset('assets/JCClogo.jpg')),
-          Text('Just Clicked Cameras', style: bigStyle),
+          Text('Billing Address', style: bigStyle),
           SizedBox(height: screenWidth*0.05,),
           streetAddressField,
           SizedBox(height: screenWidth*0.02,),
@@ -167,6 +179,8 @@ class PaymentTypePage extends StatelessWidget{
           stateField,
           SizedBox(height: screenWidth*0.05,),
           zipCodeField,
+          SizedBox(height: screenWidth*0.10,),
+          Text('Credit Card Info', style: bigStyle),
           SizedBox(height: screenWidth*0.05,),
           nameField,
           SizedBox(height: screenWidth*0.05,),
@@ -174,7 +188,7 @@ class PaymentTypePage extends StatelessWidget{
           SizedBox(height: screenWidth*0.05,),
           cvvField,
           SizedBox(height: screenWidth*0.05,),
-          zipCodeField,
+          exDateField,
           // Divider(thickness: 2.0, color: DarkCyan, height: 20),
           SizedBox(height: screenWidth*0.05,),
           submitPaymentButton

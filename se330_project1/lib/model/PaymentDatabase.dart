@@ -2,11 +2,10 @@
 import 'package:intl/intl.dart';
 
 class PaymentData {
-  String  streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard;
-  DateFormat expirationDate; 
+  String  streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate;
 
   //EmailDatabase({ this.email, this.comment});
-   PaymentData(String ad, String ct, String st, String zp, String cn, String cv, String nm, DateFormat ex){
+   PaymentData(String ad, String ct, String st, String zp, String cn, String cv, String nm, String ex){
      streetAddress = ad;
      city = ct;
      state = st;
@@ -18,6 +17,6 @@ class PaymentData {
    }
 }
 
-List<PaymentData> pastComments = [
-  //EmailDatabase(email: 'test@yahoo.com', comment: "this is a comment here"), 
+List<PaymentData> paymentInfo = [
+  
 ];
