@@ -47,6 +47,10 @@ class MyMainPage extends StatelessWidget{
     print('Future Implementation');
     //Navigator.push(context, MaterialPageRoute(builder: (context) => AccountCreation()));
   }
+    Future navigateToPaymentType(context) async {
+    print('Future Implementation');
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentInputType()));
+  }
 
   @override 
   Widget build(BuildContext context){
