@@ -19,7 +19,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
   }
 
   Future navigateForwardToPaymentInfo(context) async {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentInfo()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentType()));
   }
 
   Widget buildRow(Widget widg1, Widget widg2){
@@ -44,15 +44,17 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
         child: Icon(Icons.chevron_left, color: Colors.white, size: screenWidth*0.06),
       ),
     );
-
+ 
     final continueButton = Material(
-      elevation: 5.0, 
+      elevation: 2.0, 
       color: DarkCyan,
       child: MaterialButton(
         minWidth: screenWidth*0.8, 
-        onPressed: () {           
-          pastPersonelInfo.add(new PersonalDatabase(firstName, lastName, address, city, zipcode, state, email)) ;
-          navigateBackToCart(context);
+        onPressed: () {
+          print('Vetting Person: ' + firstName + " " + lastName); 
+          pastPersonelInfo.add(PersonalDatabase(firstName, lastName, address, city, zipcode, state, email));
+          print('New Person: ' + firstName + " " + lastName);
+          navigateForwardToPaymentInfo(context);
         },
         child: Text('Continue to Payment Info', style: whiteStyle),
       ),
@@ -150,7 +152,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
           OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
 
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text('Personal Information'),
         backgroundColor: DarkCyan,

@@ -26,8 +26,7 @@ class _CartPageState extends State<Cart>{
       color: DarkCyan,
       child: MaterialButton(        
         minWidth: screenWidth, 
-        onPressed: () { 
-          print('Payment screen here');
+        onPressed: () {  
           navigateToPayment(context);           
         },
         child: Text('Continue to Payment', style: whiteStyle)    
