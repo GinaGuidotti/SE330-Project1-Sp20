@@ -6,6 +6,7 @@ import 'package:se330_project1/screens/home.dart';
 //import 'package:se330_project1/navigation/custom_navigation_drawer.dart'; 
 import 'package:se330_project1/model/CameraList.dart';
 import 'package:se330_project1/model/CartItems.dart';  
+import 'package:se330_project1/screens/AccountCreation.dart';
 
 void main(){ 
   runApp(
@@ -41,14 +42,10 @@ class MyMainPage extends StatelessWidget{
 
   Future navigateToHome(context) async {
     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-  }
-
-  Future navigateToLogin(context) async {
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-  }
-
+  } 
   Future navigateToAccountCreation(context) async {
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+    print('Future Implementation');
+    //Navigator.push(context, MaterialPageRoute(builder: (context) => AccountCreation()));
   }
 
   @override 
@@ -110,26 +107,26 @@ class MyMainPage extends StatelessWidget{
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
         onPressed: () { 
           //(context as Element).markNeedsBuild();
-          navigateToLogin(context);
+          navigateToHome(context);
         },         
         child: Text('Login to Account', style: style, textAlign: TextAlign.center,)              
       ),
     );
 
-    // final createAccountButton = Material(
-    //   elevation: 5.0,
-    //   borderRadius: BorderRadius.circular(30.0),
-    //   color: DarkCyan,
-    //   child: MaterialButton(
-    //     minWidth: MediaQuery.of(context).size.width*0.9,
-    //     padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
-    //     onPressed: () { 
-    //       //(context as Element).markNeedsBuild();
-    //       navigateToAccountCreation(context);
-    //     },         
-    //     child: Text('Create Account', style: style, textAlign: TextAlign.center,)              
-    //   ),
-    // );
+    final createAccountButton = Material(
+      //elevation: 5.0,
+      //borderRadius: BorderRadius.circular(30.0),
+      color: Colors.white,
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width*0.9,
+        //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0), 
+        onPressed: () { 
+          //(context as Element).markNeedsBuild();
+          navigateToAccountCreation(context);
+        },         
+        child: Text('Create Account', style: style, textAlign: TextAlign.center,)              
+      ),
+    );
 
     theCameraList = new List<Cameras>(); //Erase all previous items in it
     recentCameras = new List<Cameras>();
@@ -203,7 +200,7 @@ class MyMainPage extends StatelessWidget{
       //drawer: CollapsingNavigationDrawer(),
       body: Column(
         children: <Widget>[
-          SizedBox(height: screenWidth*0.15,),
+          SizedBox(height: screenWidth*0.10,),
           SizedBox(height: screenHeight*0.2, child: Image.asset('assets/JCClogo.jpg')),
           Text('Just Clicked Cameras', style: bigStyle),
           SizedBox(height: screenWidth*0.05,),
@@ -215,8 +212,8 @@ class MyMainPage extends StatelessWidget{
           SizedBox(height: screenWidth*0.05,),
           loginAsGuestButton,
           // Divider(thickness: 2.0, color: DarkCyan, height: 20),
-          // SizedBox(height: screenWidth*0.05,),
-          //createAccountButton
+          SizedBox(height: screenWidth*0.05,),
+          createAccountButton
 
           
         ],

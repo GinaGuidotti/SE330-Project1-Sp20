@@ -22,7 +22,7 @@ class _SavedPageState extends State<Saved>{
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[               
-              Text('Your Saved'),
+              Text('Your Saved', textAlign: TextAlign.center,),
               IconButton(
                 icon: Icon(Icons.search), 
                 onPressed: (){
@@ -134,32 +134,4 @@ class SavedCameraItemBody extends StatelessWidget {
     );
      
   }
-}
-
-class Cameras{
-  String brand = "";
-  String model = "";
-  double price = 0;
-  String assetPath = "";
-  String cameraInfo = "";
-
-  bool favorite = false;
-  bool saved = false;
-  String review;
-
-  Cameras(String b, String m, double p, String ap, String cInfo){
-    brand = b;
-    model = m;
-    price = p;
-    assetPath = ap;
-    cameraInfo = cInfo;
-  }
-   
-  void clickedFavoriteButton(){
-    favorite = !favorite;
-  }
-
-  void clickedSavedButton(){
-    saved = !saved;
-  }
-}
+} 
