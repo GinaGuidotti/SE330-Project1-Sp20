@@ -48,7 +48,7 @@ class MyMainPage extends StatelessWidget{
     //Navigator.push(context, MaterialPageRoute(builder: (context) => AccountCreation()));
   }
 
-  @override 
+  @override  
   Widget build(BuildContext context){
     
    double screenWidth = MediaQuery.of(context).size.width;
