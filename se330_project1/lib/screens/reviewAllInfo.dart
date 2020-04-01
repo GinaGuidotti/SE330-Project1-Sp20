@@ -8,6 +8,8 @@ import 'package:se330_project1/model/PaymentDatabase.dart';
 import 'package:se330_project1/main.dart';
 import 'package:se330_project1/screens/ConfirmationPage.dart';
 import 'package:se330_project1/model/orderDatabase.dart';
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
+import 'package:se330_project1/screens/ReviewCameraInfo.dart';
 
  class ReviewAllInfo extends StatefulWidget { 
   @override
@@ -15,7 +17,7 @@ import 'package:se330_project1/model/orderDatabase.dart';
 } 
 
 
-
+int personIndex = 0;
 class ReviewAllInfoBody extends State<ReviewAllInfo>{
   String fullname, streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate; 
 
@@ -24,7 +26,7 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
   }
 
   Future navigateToConfirmation(context) async { 
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Confirmation()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ReviewCamera()));
   }
 
   RichText modPrint = new RichText(text: TextSpan(text:'empty test'));
@@ -51,48 +53,49 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
     return modPrint;
   }
   RichText credPrint = new RichText(text: TextSpan(text:'empty test'));
-  Widget printCreditText(TextStyle modTitle, TextStyle smaller, int index){
-    creditNumber = paymentInfo[index].creditNumber;
-    cvv = paymentInfo[index].cvv;
-    nameOnCard = paymentInfo[index].nameOnCard;
-    expirationDate = paymentInfo[index].expirationDate;
+  Widget printCreditText(TextStyle titleTitle, TextStyle modTitle, TextStyle smaller, int index){
+    creditNumber = paymentInfo[personIndex].creditNumber;
+    cvv = paymentInfo[personIndex].cvv;
+    nameOnCard = paymentInfo[personIndex].nameOnCard;
+    expirationDate = paymentInfo[personIndex].expirationDate;
     modPrint = new RichText(
       text: TextSpan(
         text: 'Credit Card Info:',
-        style: modTitle,
+        style: titleTitle,        
         children: <TextSpan>[
           TextSpan(text: ('\nName as it appears on card: '), style: modTitle, ),
-          TextSpan(text:  paymentInfo[index].nameOnCard + " ", style: modTitle),
+          TextSpan(text:  paymentInfo[personIndex].nameOnCard + " ", style: smaller),
           TextSpan(text: '\nLast 4 of CC Number: ', style: modTitle),
-          TextSpan(text: paymentInfo[index].creditNumber.substring(paymentInfo[index].creditNumber.length-4, paymentInfo[index].creditNumber.length)+ " ", style: modTitle),
+          TextSpan(text: paymentInfo[personIndex].creditNumber.substring(paymentInfo[personIndex].creditNumber.length-4, paymentInfo[index].creditNumber.length)+ " ", style: smaller),
           TextSpan(text: '\nCvv: ', style: modTitle),
-          TextSpan(text: paymentInfo[index].cvv + " ", style: modTitle),
+          TextSpan(text: paymentInfo[personIndex].cvv + " ", style: smaller),
           TextSpan(text: '\nExpiration Date: ', style: modTitle),
-          TextSpan(text: paymentInfo[index].expirationDate + " ", style: modTitle),
+          TextSpan(text: paymentInfo[personIndex].expirationDate + " ", style: smaller),
         ]
       )
     );
     return modPrint;
   }
+
   RichText billingPrint = new RichText(text: TextSpan(text:'empty test'));
-  Widget printBillingAddressText(TextStyle modTitle, TextStyle smaller, int index){
-    streetAddress = paymentInfo[index].streetAddress;
-    paymentInfo[index].city = city;
-    state = paymentInfo[index].state;
-    zipCode = paymentInfo[index].zipCode; 
+  Widget printBillingAddressText(TextStyle titleTitle, TextStyle modTitle, TextStyle smaller, int index){
+    streetAddress = paymentInfo[personIndex].streetAddress;
+    paymentInfo[personIndex].city = city;
+    state = paymentInfo[personIndex].state;
+    zipCode = paymentInfo[personIndex].zipCode; 
     modPrint = new RichText(
       text: TextSpan(
         text: 'Billing Address:',
-        style: modTitle,
+        style: titleTitle,
         children: <TextSpan>[
           TextSpan(text: ('\nStreet Address: '), style: modTitle, ),
-          TextSpan(text: paymentInfo[index].streetAddress + " ", style: modTitle),
-          TextSpan(text: '\nCity: ', style: modTitle),
-          TextSpan(text: paymentInfo[index].city + " ", style: modTitle),
+          TextSpan(text: paymentInfo[personIndex].streetAddress + " ", style: smaller),
+          // TextSpan(text: '\nCity: ', style: modTitle),
+          // TextSpan(text: paymentInfo[personIndex].city + " ", style: smaller),
           TextSpan(text: '\nState: ', style: modTitle),
-          TextSpan(text: paymentInfo[index].state + " ", style: modTitle),
+          TextSpan(text: paymentInfo[personIndex].state + " ", style: smaller),
           TextSpan(text: '\nZip Code: ', style: modTitle),
-          TextSpan(text: paymentInfo[index].zipCode + " ", style: modTitle),
+          TextSpan(text: paymentInfo[personIndex].zipCode + " ", style: smaller),
         ]
       )
     );
@@ -105,6 +108,7 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
     TextStyle style = TextStyle(fontSize: screenWidth*0.06, color: Colors.black);
     TextStyle smaller = TextStyle(fontSize: screenWidth*0.04, color: Colors.black);  
     TextStyle modTitle = TextStyle(fontSize: screenWidth*0.05, color: Colors.black); 
+    TextStyle title = TextStyle(fontSize: screenWidth*0.06, color: Colors.black, fontWeight: FontWeight.bold); 
     TextStyle whiteStyle = TextStyle(fontSize: screenWidth*0.06, color: Colors.white); 
     
 
@@ -126,10 +130,10 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
       child: MaterialButton(
         minWidth: screenWidth*0.8, 
         onPressed: () {     
-          orderInfo.add(OrderData(fullname, streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate));       
+          //orderInfo.add(OrderData(fullname, streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate));       
           navigateToConfirmation(context);
         },
-        child: Text('Confirm Order', style: whiteStyle),
+        child: Text('Confirm Payment', style: whiteStyle),
       ),
     );
      
@@ -138,7 +142,7 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
     Widget _buildCard(int index) => SizedBox(
       height: screenHeight*0.85,
       child: Card(
-        child: Column(
+        child: ListView(
           children: [
             ListTile(
               title:  Text( camerasInCart[index].brand,style: style, textAlign: TextAlign.center),
@@ -150,14 +154,12 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
               subtitle: printModText(modTitle, smaller, index)                  
             ),
             Divider(),
-            ListTile(
-              //leading: quantityButtons(index, screenWidth, context),            
+            ListTile(           
               title: Text('Quantity '+(camerasInCart[index].quantity).toString(),
                     style: style, textAlign: TextAlign.left),
             ),
             Divider(),
-            ListTile(
-            //  leading: deleteButton(index, screenWidth, context),
+            ListTile( 
               title: Text('Total Base Price: \$'+(camerasInCart[index].basePrice).toStringAsFixed(2) + ' x '+camerasInCart[index].quantity.toString()+
                         '\nTotal Modification Price: \$'+(camerasInCart[index].totalModificationPrice).toStringAsFixed(2) + ' x '+camerasInCart[index].quantity.toString(),
                          style: smaller, textAlign: TextAlign.left),
@@ -171,18 +173,14 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
       Widget _buildInfoCard() => SizedBox(
       height: screenHeight*0.85,
       child: Card(
-        child: Column(
+        child: ListView(
           children: [
             ListTile(
-              title:  printBillingAddressText(modTitle, smaller, 0), 
-            ),
-            Divider(),
-            ListTile(
-              //subtitle: ??                   
-            ),
+              title:  printBillingAddressText(title, modTitle, smaller, 0), 
+            ), 
             Divider(),
             ListTile(       
-              title: printCreditText(modTitle, smaller, 0),
+              title: printCreditText(title, modTitle, smaller, 0),
             ),
            
           ]
@@ -191,31 +189,34 @@ class ReviewAllInfoBody extends State<ReviewAllInfo>{
       );
 
 
-    Widget getCartItems(BuildContext context){
-      return ListView.builder(
-        itemCount: camerasInCart.length,
-        itemBuilder: (context, index){
-          return  ListTile(
-              title: _buildCard(index),            
-            
-          );
-        },
-        
+    Widget getCartItems(BuildContext context){ 
+      double size = (camerasInCart.length*500).toDouble();
+      return SizedBox(
+        height: size,
+        child:  ListView.builder(
+          itemCount: camerasInCart.length,
+          itemBuilder: (context, index){
+            return  ListTile( 
+                title: _buildCard(index),            
+              
+            );
+          },
+        ),
       );
     } 
   
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Review Information'),
+        title: Text('Review Payment Information'),
         backgroundColor: DarkCyan,
       ),
-      //drawer: CollapsingNavigationDrawer(),
+      drawer: CollapsingNavigationDrawer(),
       body: ListView(
         children: <Widget>[
-          SizedBox(height: screenWidth*0.04,),  
-          getCartItems(context),
-          SizedBox(height: screenWidth*0.05,),
+          SizedBox(height: screenWidth*0.04,), 
+          //getCartItems(context), 
+          SizedBox(height: screenWidth*0.04,), 
           _buildInfoCard(),
           SizedBox(height: screenWidth*0.1,),
 

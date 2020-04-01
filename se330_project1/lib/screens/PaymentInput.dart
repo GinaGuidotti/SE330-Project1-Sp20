@@ -7,6 +7,7 @@ import 'package:se330_project1/model/PaymentDatabase.dart';
 import 'package:se330_project1/main.dart';
 import 'package:se330_project1/screens/reviewAllInfo.dart';
 import 'package:se330_project1/screens/PersonalInfo.dart';
+import 'package:se330_project1/navigation/custom_navigation_drawer.dart';
 
 class PaymentType extends StatefulWidget{ 
   @override
@@ -152,8 +153,7 @@ class PaymentTypePage extends State<PaymentType>{
       color: DarkCyan,
       child: MaterialButton(
         minWidth: screenWidth*0.8, 
-        onPressed: () {    
-          print('test me')       ;
+        onPressed: () {     
           paymentInfo.add(PaymentData(streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate));       
           navigateToReviewAllInfo(context);
         },
@@ -166,12 +166,10 @@ class PaymentTypePage extends State<PaymentType>{
       appBar: AppBar(
         title: Text('Payment Information'),
         backgroundColor: DarkCyan,
-      ),
-      //drawer: CollapsingNavigationDrawer(),
-      body: Column(
+      ), 
+      body: ListView(
         children: <Widget>[
-          SizedBox(height: screenWidth*0.02,),
-          //SizedBox(height: screenHeight*0.2, child: Image.asset('assets/JCClogo.jpg')),
+          SizedBox(height: screenWidth*0.02,), 
           Text('Billing Address', style: bigStyle, textAlign: TextAlign.center), 
           streetAddressField,
           SizedBox(height: screenWidth*0.01,),
@@ -189,7 +187,7 @@ class PaymentTypePage extends State<PaymentType>{
           cvvField,
           SizedBox(height: screenWidth*0.01,),
           exDateField, 
-          SizedBox(height: screenWidth*0.05,), 
+          SizedBox(height: screenWidth*0.15,), 
         ],
       ), 
       bottomNavigationBar: Row(
@@ -198,7 +196,9 @@ class PaymentTypePage extends State<PaymentType>{
             backAPageButton,  
             submitPaymentButton,
           ],
-        ),
+        ), 
+      drawer: CollapsingNavigationDrawer(), 
+        
 
     );
   }   

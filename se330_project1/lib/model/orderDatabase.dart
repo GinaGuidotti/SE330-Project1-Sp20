@@ -1,10 +1,10 @@
 import 'package:intl/intl.dart';
 
 class OrderData {
-  String fullName, streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate;
+  String fullName, streetAddress, city, state, zipCode, creditNumber, cvv, nameOnCard, expirationDate, totalPrice;
   String orderNumber;
  
-   OrderData(String fn, String ad, String ct, String st, String zp, String cn, String cv, String nm, String ex){
+   OrderData(String fn, String ad, String ct, String st, String zp, String cn, String cv, String nm, String ex, String tp){
      fullName = fn;
      streetAddress = ad;
      city = ct;
@@ -14,6 +14,7 @@ class OrderData {
      cvv = cv;
      nameOnCard = nm;
      expirationDate = ex;
+     totalPrice = tp;
    }
 }
 

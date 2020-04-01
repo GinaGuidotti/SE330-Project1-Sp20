@@ -50,8 +50,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
       color: DarkCyan,
       child: MaterialButton(
         minWidth: screenWidth*0.8, 
-        onPressed: () {
-          print('Vetting Person: ' + firstName + " " + lastName); 
+        onPressed: () { 
           pastPersonelInfo.add(PersonalDatabase(firstName, lastName, address, city, zipcode, state, email));
           print('New Person: ' + firstName + " " + lastName);
           navigateForwardToPaymentInfo(context);
@@ -181,7 +180,7 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
           SizedBox(height: screenWidth*0.02,),
           emailField,
           SizedBox(height: screenWidth*0.02,), 
-          SizedBox(height: screenWidth*0.1,),
+          SizedBox(height: screenWidth*0.15,),
 
         ],
       ),
@@ -191,7 +190,8 @@ class _PersonalInfoPageState extends State<PersonalInfo>{
             backAPageButton,             
             continueButton,
           ],
-        ),
+        ), 
+      drawer: CollapsingNavigationDrawer(),
     ); 
   }
 
