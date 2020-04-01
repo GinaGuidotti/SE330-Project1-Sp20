@@ -30,12 +30,13 @@ class CameraItem extends StatelessWidget {
       elevation: 5.0, 
       color: DarkCyan,
       child: MaterialButton(
-        minWidth: screenWidth*0.5, 
+        minWidth: screenWidth*0.7, 
+        //minWidth: screenWidth*0.5, //for with addToCartButton
         onPressed: () {
           insideCart = false; //used for header bar 
           navigateToModPage(context);
         },
-        child: Text('Modifications', style: whiteStyle)    
+        child: Text('Continue to Modifications', style: whiteStyle)    
       ),
     );
     
@@ -66,13 +67,7 @@ class CameraItem extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[               
-              Text('Camera Information '), 
-              IconButton(
-                icon: Icon(Icons.short_text),
-                onPressed: (){
-                  navigateToCart(context);
-                },
-              ), 
+              Text('Camera Information '),  
             ],
           ),
         ),
@@ -82,7 +77,7 @@ class CameraItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             modificationsButton,             
-            addToCartButton,
+            //addToCartButton,
           ],
         ),
       ),

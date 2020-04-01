@@ -14,7 +14,9 @@ class CartListHome extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,  
       home: Scaffold( 
-        body: cartEmpty ? null : CartListBody(),
+        body: cartEmpty ? 
+        Text('\n\nYour cart is feeling sad because it\'s empty. \nPlease cheer it up! :)', style: TextStyle(fontSize: MediaQuery.of(context).size.width*0.07, color: Colors.black), textAlign: TextAlign.center,) 
+        : CartListBody(),
       ),
     );
   }
@@ -195,8 +197,8 @@ class CartListBody extends StatelessWidget{
     double screenHeight = MediaQuery.of(context).size.height;
     TextStyle style = TextStyle(fontSize: screenWidth*0.06, color: Colors.black);
     TextStyle smaller = TextStyle(fontSize: screenWidth*0.04, color: Colors.black);  
-    TextStyle modTitle = TextStyle(fontSize: screenWidth*0.05, color: Colors.black);
-    
+    TextStyle modTitle = TextStyle(fontSize: screenWidth*0.05, color: Colors.black); 
+
     Widget _buildCard(int index) => SizedBox(
       height: screenHeight*0.85,
       child: Card(
